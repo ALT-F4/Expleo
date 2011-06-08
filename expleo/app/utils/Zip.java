@@ -49,7 +49,9 @@ public class Zip
 			//create a FileInputStream on top of f
 			FileInputStream fis = new FileInputStream(f);
 			// create a new zip entry
-			String path = (f.getPath().split(root))[1];
+                        String filepath = f.getPath();
+                        filepath = filepath.replaceAll("\\\\", "/");
+			String path = (filepath.split(root))[1];
 			System.out.println(path);
 			ZipEntry anEntry = new ZipEntry(path);
 			//place the zip entry in the ZipOutputStream object
@@ -66,6 +68,8 @@ public class Zip
 
 	public void zipDir(String directory, String output) throws IOException
 	{
+                directory = directory.replaceAll("\\\\", "/");
+                output = output.replaceAll("\\\\", "/");
 		root = directory;
 		ZipOutputStream zos = new ZipOutputStream(new FileOutputStream(output));
 		zipDir(directory, zos);
@@ -74,6 +78,8 @@ public class Zip
 
 	public void unzip(String input, String directory) throws FileNotFoundException, IOException
 	{
+                input = input.replaceAll("\\\\", "/");
+                directory = directory.replaceAll("\\\\", "/");
 		FileInputStream fin = new FileInputStream(new File(input));
 		ZipInputStream zin = new ZipInputStream(fin);
 		ZipEntry ze = null;

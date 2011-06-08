@@ -107,6 +107,7 @@ public class DocumentGenerator
 
 	private String getFilename() {
 		String filename = templateFile.getAbsolutePath();
+                filename = filename.replaceAll("\\\\", "/");
 		return filename.substring(filename.lastIndexOf("/") + 1, filename.lastIndexOf("."));
 	}
 
@@ -126,6 +127,7 @@ public class DocumentGenerator
 
 
 				String path = uniqueFolder.getAbsolutePath() + "/" + filename;
+                                path = path.replaceAll("\\\\", "/");
 				String docxContent = path + "/word";
 				File file = new File(docxContent);
 			
