@@ -268,8 +268,13 @@ public class Template extends Model
         }
         catch (Exception e)
         {
-            System.out.println(e.toString());
-            return e.getStackTrace().toString();
+            //System.out.println(e.getStackTrace());
+            StackTraceElement[] eles = e.getStackTrace();
+            for(int i = 0; i < eles.length; i++)
+            {
+                System.out.println(eles[i]);
+            }
+            return e.toString();
         }
     }
 
