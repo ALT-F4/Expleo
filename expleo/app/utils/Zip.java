@@ -78,6 +78,8 @@ public class Zip
 
 	public void unzip(String input, String directory) throws FileNotFoundException, IOException
 	{
+                input = input.replaceAll("\\\\", "/");
+                directory = directory.replaceAll("\\\\", "/");
 		FileInputStream fin = new FileInputStream(new File(input));
 		ZipInputStream zin = new ZipInputStream(fin);
 		ZipEntry ze = null;
