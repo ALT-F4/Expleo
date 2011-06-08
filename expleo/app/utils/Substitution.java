@@ -45,6 +45,7 @@ public class Substitution {
         while (iterator.hasNext()) {
             Map.Entry replacePairs = (Map.Entry) iterator.next();
             
+            System.out.println("REPLACEALL: "+"%%" + replacePairs.getKey().toString() + "%%");
             text = text.replaceAll("%%" + replacePairs.getKey().toString() + "%%", replacePairs.getValue().toString());
         }
     }
