@@ -269,7 +269,7 @@ public class Template extends Model
         catch (Exception e)
         {
             System.out.println(e.toString());
-            return e.toString();
+            return e.getStackTrace().toString();
         }
     }
 
