@@ -207,7 +207,7 @@ public class Template extends Model
 
             int dotPos = template.getName().lastIndexOf(".");
             String newName;
-            extension = null;
+            extension = "";
 
             if (dotPos != -1)
             {
