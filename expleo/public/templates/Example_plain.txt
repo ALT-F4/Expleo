@@ -1,22 +1,22 @@
-%%test:user_titel%% %%user_vorname%% %%_user_nach_name%%
-%%user_strasse_haus%% %%Nummer_tuernummer%%
-%%user_plz%% %%_user_ort%%
-%%user_telefonnummer%%
-%%user_email%%
+%%User:Titel%% %%User:Vorname%% %%User:Nachname%%
+%%User:Strasse%% %%User:Hausnummer%%
+%%User:PLZ%% %%User:Ort%%
+%%User:Telefonnummer%%
+%%User:user_email%%
 
 
-%%firmenname%%
-%%firmen_anschrift%%
-%%firma_plz%% %%_firma_ort%%
-%%firma_zuhanden_ansprechperson%%
-%%firma_ansprechperson_email%%
-										%%ort%%, %%datum%%
+%%Firma:Name%%
+%%Firma:Anschrift%%
+%%Firma:PLZ%% %%Firma:Ort%%
+zuhanden: %%Firma:Ansprechperson%%
+%%Firma:Ansprechperson Email%%
+										%%Ort%%, %%Datum%%
 
-Bewerbung als Softwareentwickler C++ %%bewerbung_als%%, Kennnummer.: %%inserat_id%%
+Bewerbung als Softwareentwickler C++ %%Bewerbung als%%, Kennnummer.: %%InseratID%%
 
-Sehr geehrter/e Herr/Frau %%firma_zuhanden_ansprechperson%%,
+Sehr geehrter/e Herr/Frau %%Firma:Ansprechperson%%,
 
-%%bewerbung_text%%
+%%Bewerbungstext%%
 
 Mit freundlichen Gruessen,
-%%user_signature%%
+%%User:Signatur%%
