@@ -14,10 +14,12 @@ public class Tag extends Model implements Comparable<Tag>
 {
 
     public String name;
+    public Integer counter;
 
     private Tag(String name)
     {
         this.name = name;
+        this.counter = 1;
     }
 
     public String toString()
@@ -51,8 +53,10 @@ public class Tag extends Model implements Comparable<Tag>
         if (tag == null)
         {
             tag = new Tag(name);
-
-
+        }
+        else
+        {
+            tag.counter++;
         }
         return tag;
 

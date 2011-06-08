@@ -45,7 +45,8 @@ public class Application extends Controller
 
     public static void index()
     {
-        render();
+        List<Tag> tagCloud = createTagCloud.listTagCloud();
+        render("Application/tagcloud.html", tagCloud);
     }
 
     @Before
@@ -118,7 +119,7 @@ public class Application extends Controller
         List<String> tagList = null;
         tagList = createTags(tags);
         Template temp = Template.find("name_", template).first();
-        temp.tagItWith(tagList).save();
+        temp.tagItWith(tagList, temp).save();
         showSingleTemplate(temp.id);
     }
 
