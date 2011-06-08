@@ -104,7 +104,7 @@ public class Application extends Controller
                 }
                 else
                 {
-                    Errors.displayInlineError(1, "Template has to be a plain-text file (encoded in UTF-8).", "../Application/upload");
+                    Errors.displayInlineError(1, error, "../Application/upload");
                 }
             }
         }

@@ -18,8 +18,5 @@ Sehr geehrter/e Herr/Frau %%firma_zuhanden_ansprechperson%%,
 
 %%bewerbung_text%%
 
-Mit freundlichen GrŸ§en,
+Mit freundlichen Gruessen,
 %%user_signature%%
-
-
-
