@@ -27,6 +27,7 @@ package models;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.lang.reflect.Array;
 import play.db.jpa.*;
 import play.data.validation.*;
 
@@ -196,19 +197,35 @@ public class Template extends Model
     {
         try
         {
+            ArrayList<String> whitelist = new ArrayList<String>();
+            
+            whitelist.add("docx");
+            whitelist.add("txt");
+            whitelist.add("tex");
+            whitelist.add("");
+            
             FileStringReader reader = new FileStringReader(template);
             String text = reader.read();
 
             int dot = template.getAbsolutePath().lastIndexOf('.');
             String extension = template.getAbsolutePath().substring(dot+1);
-
-            if (!extension.equals("docx"))
+            
+            
+            Collections.sort(whitelist);
+            int found = Collections.binarySearch(whitelist, extension);
+            
+            if(found < 0)
             {
-                if (!Helper.isUtf8(text))
-                {
-                    return "File must be in Plaintext (UTF 8).";
-                }
+                return "Filetype not supported!";
             }
+
+//            if (!extension.equals("docx"))
+//            {
+//                if (!Helper.isUtf8(text))
+//                {
+//                    return "File must be in Plaintext (UTF 8).";
+//                }
+//            }
 
             String author = userRegistered;
 
