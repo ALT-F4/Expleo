@@ -90,7 +90,7 @@ public class Application extends Controller
 
             validation.clear();
             validation.required(name).message("Please insert a name.");
-            validation.required(template).message("Please select a file.");
+            validation.required(template).message("File is empty. -- go away");
 
 
             if (template != null && !Validation.hasErrors())
