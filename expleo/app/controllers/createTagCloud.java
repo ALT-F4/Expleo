@@ -31,7 +31,7 @@ public class createTagCloud extends Controller
 
     public static List<Tag> listTagCloud()
     {
-        List<Tag> tagCloud = Tag.find("order by counter desc").fetch();
+        List<Tag> tagCloud = Tag.find("order by counter desc").fetch(20);
         return tagCloud;
     }
 }

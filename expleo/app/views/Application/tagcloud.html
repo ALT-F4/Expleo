@@ -29,15 +29,13 @@
     </head>
     <body>
 
-        #{list items:tagCloud, as: 'tag'}
-        <p>
-            ${tag.name}
-            ${tag.counter}
-        </p>
-        #{/ list}
-
         %{
-           
+           int font_size = 20;
+           for(String tag : tagCloud.name)
+           {
+            %}<p style="font-size: ${font_size}px">${tag}</p>%{
+            font_size--;
+           }
         %}
     </body>
 </html>
