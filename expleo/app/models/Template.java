@@ -335,23 +335,26 @@ public class Template extends Model
         return pathToFilledFile + ".jpg";
     }
 
-    public Template tagItWith(List<String> names, Template temp)
+    public Template tagItWith(List<String> names)
     {
+        boolean exists = false;
         for (String name : names)
         {
-            Iterator it = temp.tags.iterator();
+            Iterator it = this.tags.iterator();
             while (it.hasNext())
             {
-                if (it.next().equals(name))
+                Tag tag = (Tag) it.next();
+                if (tag.name.equals(name))
                 {
-                }
-                else
-                {
-                    tags.add(Tag.findOrCreateByName(name));
+                    exists = true;
                 }
             }
-
+            if (!exists)
+            {
+                tags.add(Tag.findOrCreateByName(name));
+            }
         }
+
         return this;
     }
 

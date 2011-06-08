@@ -119,7 +119,7 @@ public class Application extends Controller
         List<String> tagList = null;
         tagList = createTags(tags);
         Template temp = Template.find("name_", template).first();
-        temp.tagItWith(tagList, temp).save();
+        temp.tagItWith(tagList).save();
         showSingleTemplate(temp.id);
     }
 

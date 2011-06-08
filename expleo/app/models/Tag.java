@@ -56,7 +56,7 @@ public class Tag extends Model implements Comparable<Tag>
         }
         else
         {
-            tag.counter++;
+            tag.counter = new Integer(tag.counter.intValue() + 1);
         }
         return tag;
 
