@@ -188,6 +188,7 @@ public class Template extends Model
 
             int dot = template.getAbsolutePath().lastIndexOf('.');
             String extension = template.getAbsolutePath().substring(dot+1);
+
             if (!extension.equals("docx"))
             {
                 if (!Helper.isUtf8(text))
@@ -205,9 +206,11 @@ public class Template extends Model
             temp.isHidden = isHidden;
             temp.save();
 
+
             int dotPos = template.getName().lastIndexOf(".");
             String newName;
             extension = "";
+
 
             if (dotPos != -1)
             {
@@ -239,7 +242,7 @@ public class Template extends Model
                 Substitution sub = new Substitution(temp.textFile);
                 Map map = new HashMap(temp.templates_);
                 Iterator it = map.keySet().iterator();
-
+                
                 while (it.hasNext())
                 {
                     String key = (String) it.next();
@@ -250,6 +253,7 @@ public class Template extends Model
                 File destination = new File(replaced_file.getParent());
                 FileStringWriter writer = new FileStringWriter(replaced_file);
 
+                
                 writer.write(sub.getText());
 
                 helper.texToPdf(replaced_file, destination);
@@ -268,12 +272,7 @@ public class Template extends Model
         }
         catch (Exception e)
         {
-            //System.out.println(e.getStackTrace());
-            StackTraceElement[] eles = e.getStackTrace();
-            for(int i = 0; i < eles.length; i++)
-            {
-                System.out.println(eles[i]);
-            }
+            System.out.println(e.getStackTrace());
             return e.toString();
         }
     }
