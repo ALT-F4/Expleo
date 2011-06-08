@@ -16,7 +16,7 @@ public class Tag extends Model implements Comparable<Tag>
     public String name;
     public Integer counter;
 
-    private Tag(String name)
+    public Tag(String name)
     {
         this.name = name;
         this.counter = 1;
@@ -56,7 +56,7 @@ public class Tag extends Model implements Comparable<Tag>
         }
         else
         {
-            tag.counter = new Integer(tag.counter.intValue() + 1);
+                tag.counter = new Integer(tag.counter.intValue() + 1);
         }
         return tag;
 
