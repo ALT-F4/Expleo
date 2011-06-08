@@ -33,6 +33,8 @@ import play.data.validation.*;
 import java.util.*;
 import javax.persistence.*;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import org.apache.commons.collections.MultiHashMap;
 //import org.apache.commons.collections.map.MultiValueMap;
 import utils.io.FileStringReader;
@@ -96,12 +98,23 @@ public class Template extends Model
         Set<String> commands = new TreeSet<String>();
 
         String[] commands_temp = this.textFile.split("%%");
+        
+        // new
+        Pattern p = Pattern.compile("%%([^%\\n]+)%%");
 
+        Matcher matcher = p.matcher(this.textFile);
+        
+        while(matcher.find())
+            //System.out.println("Match: "+matcher.group(1));
+            commands.add(matcher.group(1));
 
-        for (int i = 1; i < commands_temp.length; i += 2)
+        
+        //
+
+       /* for (int i = 1; i < commands_temp.length; i += 2)
         {
             commands.add(commands_temp[i]);
-        }
+        }*/
 
         Iterator iterator = commands.iterator();
 
