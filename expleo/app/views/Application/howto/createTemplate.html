@@ -28,20 +28,23 @@
 	<h1>How to create templates</h1>
 </p>
 <p>
-	You can create templates by using plain text, latex or docx files. For substitution write %%. (eg. %%xyz%%, %%abc:xyz%%)
-	If you want to have cagetories use the example "%%abc:xyz%%".
+	You can create templates by using plain text, latex or docx files.
+	Terms which should be replaced in the template should be placed into %% tags. (eg. %%xyz%%, %%abc:xyz%%)
+	If you want to have categories use the example "%%abc:xyz%%".
+
+
 </p>
 <p>
-	example upload:
+	<h2 class="howto_h2">Example upload:</h2>
 	<pre>
-	Hello %%reciever:first name%% %%reciever:last name%%!
+	Hello %%Receiver:First name%% %%Receiver:Last name%%!
 
-	regards %%sender%%
+	regards %%Sender%%
 	</pre>
-	example formular:<br>
+	<h2 class="howto_h2">Example formular:<br></h2>
 	<img src="@{'/public/images/howto/example.png'}" />
 	<br>
-	example output:
+	<h2 class="howto_h2">Example output:</h2>
 	<pre>
 	Hello Robert Christoph!
 

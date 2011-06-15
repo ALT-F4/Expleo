@@ -388,3 +388,10 @@ h6 {
 	color: #9FB6CD;
 	font-size: 25px;
 }
+
+.howto_h2 {
+	color: #9FB6CD;
+	font-size: 18px;
+	text-decoration: underline;
+	padding-bottom: 3px;
+}
