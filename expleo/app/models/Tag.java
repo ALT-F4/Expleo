@@ -14,10 +14,12 @@ public class Tag extends Model implements Comparable<Tag>
 {
 
     public String name;
+    public Integer counter;
 
-    private Tag(String name)
+    public Tag(String name)
     {
         this.name = name;
+        this.counter = 1;
     }
 
     public String toString()
@@ -51,10 +53,28 @@ public class Tag extends Model implements Comparable<Tag>
         if (tag == null)
         {
             tag = new Tag(name);
-
-
+        }
+        else
+        {
+            tag.counter = new Integer(tag.counter.intValue() + 1);
         }
         return tag;
 
+    }
+
+    public void deleteTag()
+    {
+
+        if (this.counter <= 1)
+        {
+            Tag tag = Tag.find("name", this.name).first();
+            System.out.println("tag->  " + tag.id + tag.name);
+            tag.delete();
+            //this.delete();
+        }
+        else
+        {
+            this.counter = new Integer(this.counter.intValue() - 1);
+        }
     }
 }

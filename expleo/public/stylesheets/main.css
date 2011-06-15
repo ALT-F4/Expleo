@@ -379,3 +379,9 @@ h6 {
     font-weight: bold;
     padding-left: 3%;
 }
+
+#tagcloud {
+
+    text-align: center;
+    /*display: inline;*/
+}

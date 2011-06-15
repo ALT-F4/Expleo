@@ -311,10 +311,14 @@ public class Template extends Model
     public static void delete(long id)
     {
         Template temp = Template.find("id", id).first();
-
-        if (temp != null)
+        Iterator it = temp.tags.iterator();
+        temp.delete();
         {
-            temp.delete();
+            while (it.hasNext())
+            {
+                ((Tag) (it.next())).deleteTag();
+            }
+
         }
     }
 
@@ -372,12 +376,26 @@ public class Template extends Model
         return pathToFilledFile + ".jpg";
     }
 
-    public Template tagItWith(List<String> name)
+    public Template tagItWith(List<String> names)
     {
-        for (String item : name)
+        boolean exists = false;
+        for (String name : names)
         {
-            tags.add(Tag.findOrCreateByName(item));
+            Iterator it = this.tags.iterator();
+            while (it.hasNext())
+            {
+                Tag tag = (Tag) it.next();
+                if (tag.name.equals(name))
+                {
+                    exists = true;
+                }
+            }
+            if (!exists)
+            {
+                tags.add(Tag.findOrCreateByName(name));
+            }
         }
+
         return this;
     }
 
