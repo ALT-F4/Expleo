@@ -465,4 +465,9 @@ public class Application extends Controller
 	 {
 		 render("Application/howto/overview.html");
 	 }
+
+	 public static void renderHowToCreateTemplate()
+	{
+		render("Application/howto/createTemplate.html");
+	}
 }

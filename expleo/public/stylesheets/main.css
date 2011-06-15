@@ -379,3 +379,12 @@ h6 {
     font-weight: bold;
     padding-left: 3%;
 }
+
+#howto_overview td{
+	padding: 20px;
+}
+
+#howto_overview {
+	color: #9FB6CD;
+	font-size: 25px;
+}

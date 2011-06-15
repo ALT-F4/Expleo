@@ -16,26 +16,35 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  *
  */
+ *
+ *
+ */
  -->
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 
 #{extends 'main.html' /}
 <p>
-<div>
-	<table id="howto_overview">
-		<tr>
-			<td><a href="@{Application.renderHowToCreateTemplate()}"><img src="@{'/public/images/howto/CreateTemplate.png'}" /></a></td>
-			<td><a href="@{Application.renderHowToCreateTemplate()}">How to create templates</a></td>
-		</tr>
-		<tr>
-			<td><a href=""><img src="@{'/public/images/howto/CreateTemplate.png'}" /></a></td>
-			<td><a href="">Create</a></td>
-		</tr>
-		<tr>
-			<td><a href=""><img src="@{'/public/images/howto/CreateTemplate.png'}" /></a></td>
-			<td><a href="">Create</a></td>
-		</tr>
-	</table>
-</div>
+	<h1>How to create templates</h1>
+</p>
+<p>
+	You can create templates by using plain text, latex or docx files. For substitution write %%. (eg. %%xyz%%, %%abc:xyz%%)
+	If you want to have cagetories use the example "%%abc:xyz%%".
+</p>
+<p>
+	example upload:
+	<pre>
+	Hello %%reciever:first name%% %%reciever:last name%%!
+
+	regards %%sender%%
+	</pre>
+	example formular:<br>
+	<img src="@{'/public/images/howto/example.png'}" />
+	<br>
+	example output:
+	<pre>
+	Hello Robert Christoph!
+
+	regards Dietmar
+	</pre>
 </p>
