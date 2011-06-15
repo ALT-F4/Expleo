@@ -11,6 +11,7 @@ about=Über uns
 login=Einloggen
 register=Registrieren
 upload=HOCHLADEN
+uploadButton=Hochladen
 hello=Hallo,
 
 added=hinzugefügt
@@ -19,6 +20,7 @@ description=Beschreibung
 inputdata=Daten eingeben
 
 uploadTemplate=Lade ein Template hoch
+hiddenTemplate=Versteckt für andere Benutzer
 
 password=Passwort
 rembemberMe=Merke
