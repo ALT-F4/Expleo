@@ -20,13 +20,14 @@ inputdata=Input Data
 
 uploadTemplate=Upload a template
 name=Name
+hiddenTemplate=Hidden for other users
 
 username=Username
 password=Password
 rembemberMe=Remember Me
 signIn=Sign In
 
-emailDescription=Your email adress is also your username
+emailDescription=Your email address is also your username
 passwordDescription=At least 6 characters 
 passwordDescriptionAgain=Make sure that you type in the same password
 email=E-Mail
@@ -34,7 +35,7 @@ passwordAgain=Re-enter password
 firstName=First Name
 lastName=Last Name
 securityQuestion=Security Question
-securityQuestionDescription= If you type in a question, you must type in a answer too
+securityQuestionDescription=If you type in a question, you must type in a answer too
 answer=Answer
 register=Register
 
