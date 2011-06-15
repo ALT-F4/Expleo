@@ -460,4 +460,9 @@ public class Application extends Controller
         temp.delete();
         render("Application/deleteTemplate.html", tempname);
     }
+
+	 public static void renderHowTo()
+	 {
+		 render("Application/howto/overview.html");
+	 }
 }
