@@ -274,10 +274,14 @@ public class Template extends Model
     public static void delete(long id)
     {
         Template temp = Template.find("id", id).first();
-
-        if (temp != null)
+        Iterator it = temp.tags.iterator();
+        temp.delete();
         {
-            temp.delete();
+            while (it.hasNext())
+            {
+                ((Tag) (it.next())).deleteTag();
+            }
+
         }
     }
 

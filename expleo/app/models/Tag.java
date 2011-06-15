@@ -62,8 +62,19 @@ public class Tag extends Model implements Comparable<Tag>
 
     }
 
-    public static void deleteTag(String name)
+    public void deleteTag()
     {
-        Tag tag = Tag.find("name", name).first();
+
+        if (this.counter <= 1)
+        {
+            Tag tag = Tag.find("name", this.name).first();
+            System.out.println("tag->  " + tag.id + tag.name);
+            tag.delete();
+            //this.delete();
+        }
+        else
+        {
+            this.counter = new Integer(this.counter.intValue() - 1);
+        }
     }
 }

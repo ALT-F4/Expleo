@@ -73,7 +73,7 @@ public class User extends Model
         this.lastname_ = lastname;
         this.question_ = question;
         this.answer_ = answer;
-        
+
         if (User.count() == 0)
         {
             this.admin_ = true;
@@ -94,7 +94,9 @@ public class User extends Model
     {
 
         if (password.length() > 0)
-          this.password_ = password;
+        {
+            this.password_ = password;
+        }
 
         this.firstname_ = firstname;
         this.lastname_ = lastname;
