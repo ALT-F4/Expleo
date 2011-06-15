@@ -203,7 +203,7 @@ public class Template extends Model
             whitelist.add("txt");
             whitelist.add("tex");
             whitelist.add("");
-            
+
             FileStringReader reader = new FileStringReader(template);
             String text = reader.read();
 

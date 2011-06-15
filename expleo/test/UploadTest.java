@@ -38,7 +38,7 @@ public class UploadTest extends UnitTest
 
         String error = Template.upload("testname", "test", testfile, null, true);
 
-        assertEquals(error, "File must be in Plaintext (UTF 8).");
+        assertEquals(error, "Filetype not supported!");
         assertEquals(Template.count(), 0);
     }
 }
