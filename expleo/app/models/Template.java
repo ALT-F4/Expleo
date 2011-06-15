@@ -219,16 +219,7 @@ public class Template extends Model
                 return "Filetype not supported!";
             }
 
-//            if (!extension.equals("docx"))
-//            {
-//                if (!Helper.isUtf8(text))
-//                {
-//                    return "File must be in Plaintext (UTF 8).";
-//                }
-//            }
-
             String author = userRegistered;
-
 
             Date now = new Date();
             Template temp = new Template(name, template.getName(), author, now, description, 4);
@@ -236,11 +227,9 @@ public class Template extends Model
             temp.isHidden = isHidden;
             temp.save();
 
-
             int dotPos = template.getName().lastIndexOf(".");
             String newName;
             extension = "";
-
 
             if (dotPos != -1)
             {
@@ -251,7 +240,6 @@ public class Template extends Model
             {
                 newName = temp.id + "_" + name;
             }
-
 
             File copy_to = new File(Play.applicationPath.getAbsolutePath() + "/public/templates/" + newName);
 
@@ -282,7 +270,6 @@ public class Template extends Model
                 File replaced_file = new File(Play.applicationPath.getAbsolutePath() + "/public/tmp/" + temp.filename_);
                 File destination = new File(replaced_file.getParent());
                 FileStringWriter writer = new FileStringWriter(replaced_file);
-
                 
                 writer.write(sub.getText());
 
@@ -294,8 +281,6 @@ public class Template extends Model
                 destination = new File(Play.applicationPath.getAbsolutePath() + "/template/" + source_name[0] + ".pdf.jpg");
 
                 helper.pdfToImage(source, destination);
-
-
             }
 
             return null;
