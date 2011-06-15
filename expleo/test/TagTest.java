@@ -10,6 +10,7 @@ import models.*;
 
 public class TagTest extends UnitTest
 {
+
     @Test
     public void CreateAndRetrieveTags()
     {
@@ -30,6 +31,7 @@ public class TagTest extends UnitTest
         tagList1.add("Hallo");
         tagList2.add("Hallo123");
         tagList3.add("Hallo");
+
 
         temp.tagItWith(tagList1).save();
         temp2.tagItWith(tagList1).save();
@@ -63,7 +65,8 @@ public class TagTest extends UnitTest
             System.out.println("All Tags in Database: " + item);
         }
 
-        assert(templates != null);
+
+        assert (templates != null);
         assertEquals(templates2.size(), 3);
         assertEquals(templates.size(), 2);
         assertEquals(templates3.size(), 1);
