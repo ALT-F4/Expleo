@@ -54,11 +54,9 @@ public class Application extends Controller
     {
         if (Security.isConnected())
         {
-
             User user = User.find("email_", Security.connected()).first();
             if (user != null)
             {
-
                 renderArgs.put("user", user);
             }
         }
@@ -69,11 +67,7 @@ public class Application extends Controller
 
         String upload = request.params.get("upload");
         Boolean success = false;
-
         String user = Security.connected();
-
-
-
         String hidden = request.params.get("isHidden");
 
         if (hidden == null)
@@ -85,14 +79,11 @@ public class Application extends Controller
             isHidden = true;
         }
 
-
         if (upload != null)
         {
-
             validation.clear();
             validation.required(name).message("Please insert a name.");
             validation.required(template).message("File is empty.");
-
 
             if (template != null && !Validation.hasErrors())
             {
@@ -101,7 +92,6 @@ public class Application extends Controller
                 {
                     tagIt(name, tags);
                     success = true;
-
                 }
                 else
                 {
@@ -149,7 +139,6 @@ public class Application extends Controller
 
     public static void showAllTemplates()
     {
-
         // Template Test
 
         /*Template.deleteAll();       
@@ -160,14 +149,11 @@ public class Application extends Controller
 
         try
         {
-
             List<Template> all_templates = Template.findAll();
-
             render(all_templates);
         }
         catch (Exception e)
         {
-
             System.out.println(e.getMessage());
             render("Application/upload.html");
         }
@@ -197,21 +183,18 @@ public class Application extends Controller
 //    }
     public static void selectedTemplate(Long id)
     {
-
         Template loadedTemplate = Template.findById(id);
         render(loadedTemplate);
     }
 
     public static void register()
     {
-
         render();
     }
 
     public static void insertionComplete() throws FileNotFoundException, IOException
     {
         //Template template = Template.findById(id);
-
         Map<String, String[]> map = request.params.all();
         Template template = Template.findById(Long.decode(map.get("ID")[0]));
 
@@ -235,17 +218,12 @@ public class Application extends Controller
         String path1 = document.getAbsolutePath();
         String playPath = Play.applicationPath.getAbsolutePath();
 
-
-
         path1 = path1.replaceAll("\\\\", "/");
         playPath = playPath.replaceAll("\\\\", "/");
-
 
         //template.pathToFilledFile = document.getFile().getAbsolutePath().replaceAll(Play.applicationPath.getAbsolutePath(), "");
         template.pathToFilledFile = path1.replaceAll(playPath, "");
         //template.pathToFilledFile = "public/tmp/1305726987921/test123.txt";
-
-
 
         File file = new File(template.pathToFilledFile);
 
@@ -270,11 +248,7 @@ public class Application extends Controller
 
         }
 
-
         render(template);
-
-
-
     }
 
     public static void generatePdf(String temp)
@@ -312,13 +286,10 @@ public class Application extends Controller
     public static void doEditProfile(String username, String password, String passwordagain,
             String firstname, String lastname, String question, String answer)
     {
-
         List<String> Errors = new ArrayList();
         boolean errorStatus = false;
         User user = User.find("email_", username).first();
         String email = user.email_;
-
-
 
         if ((firstname.length() == 0) || (lastname.length() == 0))
         {
@@ -338,7 +309,6 @@ public class Application extends Controller
             errorStatus = true;
         }
 
-
         if (question.length() != 0 || answer.length() != 0)
         {
             if (answer.length() == 0 || question.length() == 0)
@@ -348,11 +318,8 @@ public class Application extends Controller
             }
         }
 
-
         if (errorStatus == false)
         {
-
-
             user.edit(password, firstname, lastname, question, answer);
             user.save();
             Errors.add("User " + email + " successfull edited");
@@ -362,10 +329,7 @@ public class Application extends Controller
 
     public static void editTemplates(Boolean admin)
     {
-
-
         User user = User.find("email_", Security.connected()).first();
-
         List<Template> all_templates = Template.findAll();
 
         render(all_templates, user.email_, admin);
@@ -388,7 +352,6 @@ public class Application extends Controller
 
     public static void editOtherProfileNow(String username)
     {
-
         User user = User.find("email_", Security.connected()).first();
         if (user.admin_ == true)
         {
@@ -403,11 +366,9 @@ public class Application extends Controller
 
     public static void deleteUser(String username)
     {
-
         User usercur = User.find("email_", Security.connected()).first();
         String mail = usercur.email_;
         User.delete("email_", username);
-
 
         if (mail.equals(username))
         {
@@ -436,7 +397,6 @@ public class Application extends Controller
 
     public static void editAdmin(String username)
     {
-
         User usercur = User.find("email_", username).first();
 
         if (usercur.admin_ == true)
@@ -450,13 +410,11 @@ public class Application extends Controller
 
         usercur.save();
 
-
         render("Application/editadmin.html");
     }
 
     public static void deleteTemplate(String tempname)
     {
-
         Template temp = Template.find("name_", tempname).first();
         Template.delete(temp.id);
         render("Application/deleteTemplate.html", tempname);
