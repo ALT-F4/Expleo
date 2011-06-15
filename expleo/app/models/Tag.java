@@ -56,9 +56,14 @@ public class Tag extends Model implements Comparable<Tag>
         }
         else
         {
-                tag.counter = new Integer(tag.counter.intValue() + 1);
+            tag.counter = new Integer(tag.counter.intValue() + 1);
         }
         return tag;
 
+    }
+
+    public static void deleteTag(String name)
+    {
+        Tag tag = Tag.find("name", name).first();
     }
 }
