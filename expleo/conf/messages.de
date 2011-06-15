@@ -54,3 +54,8 @@ deleteUser=Benutzer löschen
 
 deleteTemplate=	Template löschen
 allProfiles=Alle Profile
+
+secure.username=Benutzername:
+secure.password=Passwort:
+secure.remember=Login festhalten
+secure.signin=Einloggen
