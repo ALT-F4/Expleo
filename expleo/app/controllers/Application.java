@@ -460,17 +460,14 @@ public class Application extends Controller
         temp.delete();
         render("Application/deleteTemplate.html", tempname);
     }
-    
+
     public static void search(String search)
     {
-        System.out.println("SearchString:" + search);
-        List<Template> templates = new ArrayList<Template>();
-        
-        templates = Template.find("byName_Like", "%"+search+"%").fetch();
-        
-        System.out.println("Anzahl gefunden: " + templates.size());
-        
-        
+        SearchHandler s = SearchHandler.getInstance();
+        HashSet<Template> templates = new HashSet<Template>();
+
+        templates = s.search(search);
+
         render(templates);
     }
 }

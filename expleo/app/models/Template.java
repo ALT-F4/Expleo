@@ -48,7 +48,6 @@ import utils.Zip;
 public class Template extends Model
 {
 
-//<<<<<<< HEAD
     @Lob
     @Required
     public String name_;
