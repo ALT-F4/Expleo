@@ -61,7 +61,9 @@ public class TagSplittingTest extends FunctionalTest
             System.out.println("Tags in Database: " + item);
         }
         List<Tag> hallo = Tag.find("name", "Hallo").fetch(5);
-        assertEquals(taggings.size(), 7);
+        System.out.println(taggings);
+        System.out.println(taggings.size());
+        assertEquals(taggings.size(), 9);
         assertEquals(hallo.size(), 1);
     }
 
