@@ -47,7 +47,7 @@
 <form action="@{Application.upload()}" method="POST" enctype="multipart/form-data">
 
 
-    <h1>Upload a template</h1>
+  <h1>&{'uploadTemplate'}</h1>
     <p>
         <label for="name">Name:</label>
         <br />
@@ -59,7 +59,7 @@
         <input name="tags" id="tags" cols="50" rows="2"></input>
     </p>
     <p>
-        <label for="name">Description:</label>
+    <label for="name">&{'description'}:</label>
         <br />
 
         <textarea name="description" cols="100" rows="10"> </textarea>
@@ -72,14 +72,14 @@
     %{
     if(user != null) { }%
   <p>
-    <input type="checkbox" name="isHidden" > Hidden for other users
+  <input type="checkbox" name="isHidden" > &{'hiddenTemplate'}
   </p>
     %{
     }
     }%
     
     <p>
-        <input type="submit" value="Upload" name="upload" />
+    <input type="submit" value="&{'uploadButton'}" name="upload" />
     </p>
 </form>
 #{/else}
