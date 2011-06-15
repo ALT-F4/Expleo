@@ -461,4 +461,14 @@ public class Application extends Controller
         Template.delete(temp.id);
         render("Application/deleteTemplate.html", tempname);
     }
+
+	 public static void renderHowTo()
+	 {
+		 render("Application/howto/overview.html");
+	 }
+
+	 public static void renderHowToCreateTemplate()
+	{
+		render("Application/howto/createTemplate.html");
+	}
 }

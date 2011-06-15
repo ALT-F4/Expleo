@@ -385,3 +385,19 @@ h6 {
     text-align: center;
     /*display: inline;*/
 }
+
+#howto_overview td{
+	padding: 20px;
+}
+
+#howto_overview {
+	color: #9FB6CD;
+	font-size: 25px;
+}
+
+.howto_h2 {
+	color: #9FB6CD;
+	font-size: 18px;
+	text-decoration: underline;
+	padding-bottom: 3px;
+}
