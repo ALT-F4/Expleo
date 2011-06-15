@@ -210,7 +210,6 @@ public class Template extends Model
             int dot = template.getAbsolutePath().lastIndexOf('.');
             String extension = template.getAbsolutePath().substring(dot+1);
             
-            
             Collections.sort(whitelist);
             int found = Collections.binarySearch(whitelist, extension);
             
