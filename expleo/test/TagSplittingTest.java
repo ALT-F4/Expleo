@@ -35,7 +35,6 @@ public class TagSplittingTest extends FunctionalTest
         assertEquals("geht", tagList.get(2));
         assertEquals("es", tagList.get(3));
         assertEquals("dir ?", tagList.get(4));
-
     }
 
     @Test
