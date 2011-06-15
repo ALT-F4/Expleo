@@ -64,7 +64,6 @@ public class Application extends Controller
 
     public static void upload(String name, String tags, String description, File template, Boolean isHidden)
     {
-
         String upload = request.params.get("upload");
         Boolean success = false;
         String user = Security.connected();
