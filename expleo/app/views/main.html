@@ -63,8 +63,8 @@
                     <a href="@{Application.register()}">Register</a>
                     #{/ else}
 
-                    <form id="searchform">
-                        <input class="input" type="text" id="search"/>
+                    <form id="searchform" action="@{Application.search()}">
+                        <input class="input" type="text" id="search" name="search"/>
                         <input class="search_button" type="submit" id="submit_search" value="">
                     </form>
                     <div id="lang"></div>
