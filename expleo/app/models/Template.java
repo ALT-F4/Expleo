@@ -379,6 +379,8 @@ public class Template extends Model
             if (!exists)
             {
                 tags.add(Tag.findOrCreateByName(name));
+            } else {
+                exists = false;
             }
         }
 
